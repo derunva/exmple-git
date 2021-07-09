@@ -1,0 +1,13 @@
+//- layout.pug
+doctype html
+html
+  head
+    title My Site - #{title}
+    link(rel="stylesheet" href="/css/main.css")
+    block scripts
+      script(src='/jquery.js')
+  body
+    block content
+    block foot
+      #footer
+        p some footer content

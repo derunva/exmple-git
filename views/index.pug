@@ -1,0 +1,35 @@
+extends main-layout.pug
+
+block content
+  .container-sm
+    .row.justify-content-center.align-items-center.full-height
+      .col.col-md-6.col-lg-4
+        form(action="/thanx" method="POST")
+          .mb-3
+            label.form-label(for='name') Enter Your Name Please 
+            input#name.form-control(type='text' name="name" value=data.name)
+            if errors.includes('name')
+              .invalid.text-danger
+                |Please choose a username.
+          .mb-3
+            label.form-label(for='phone') Enter Your Phone Please 
+            input#phone.form-control(type='tel' name="phone" value=data.phone)
+            if errors.includes('phone')
+              .invalid.text-danger
+                |Please choose a username.
+          .mb-3
+            label.form-label(for='email') Email address
+            input#email.form-control(type='email' value=data.email aria-describedby='emailHelp' name="email")
+            #emailHelp.form-text We&apos;ll never share your email with anyone else.
+            if errors.includes('email')
+              .invalid.text-danger
+                |Please choose a username.
+          .mb-3.form-check
+            input#exampleCheck1.form-check-input(type='checkbox' checked=data.aware name="aware" required)
+            label.form-check-label(for='exampleCheck1') З #[a(href="/rules_and_conditions") правилами] проведення фестивалю ознайомлений
+          button.btn.btn-primary(type='submit') 
+            | Submit
+            .icon-beer
+
+
+    

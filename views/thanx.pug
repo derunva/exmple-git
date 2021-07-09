@@ -1,0 +1,16 @@
+extends main-layout.pug
+
+block content
+  .py-3.px-3.white-bg
+    .container
+      h1= message
+      p= JSON.stringify(data) 
+      h2 Привіт, #{data.name}. Дякуємо за реєстрацію.
+      p Запрошення надіслано на ваш #[strong #{data.email}]
+      p 
+        |Зателефонуйте собі
+        | 
+        a(href="tel:"+ data.phone) клацай тутисько 
+      h2=diffDays
+block foot
+  .footer hi people

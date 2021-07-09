@@ -1,0 +1,17 @@
+//- page-a.pug
+extends layout.pug
+
+block scripts
+  script(src='/jquery.js')
+  script(src='/pets.js')
+
+block content
+  h1= title
+  ul
+    each val in [1, 2, 3, 4, 5]
+      li= val
+  ul
+    each val, index in ['zero', 'one', 'two']
+      li= index + ': ' + val
+block foot
+  p.footer my custom footer
